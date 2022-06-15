@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title class="header-title"><b>Pay</b>Friends</ion-title>
+        <ion-button (click)="authService.logout()" slot="end" fill="clear" color="light">Sair</ion-button>
+        <ion-avatar (click)="openProfileModal()" class="avatar-class cursor-pointer" slot="end">
+            <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+    </ion-toolbar>
+</ion-header>
+
+<ion-grid class="grid-class">
+
+    <ion-row class="payments-title-class">
+        <ion-title class="payments-title">Meus pagamentos</ion-title>
+    </ion-row>
+
+    <ion-row class="payment-button">
+        <ion-button color="secondary" (click)="openNewTaskModal()">Adicionar pagamento
+        </ion-button>
+    </ion-row>
+
+    <ion-card class="card-class">
+
+        <ion-card-header color="light">
+            <ion-searchbar (ionChange)="searchFilter($event)" placeholder="Pesquisar por usuário...">
+            </ion-searchbar>
+        </ion-card-header>
+
+        <ag-grid-angular class="ag-grid-class ag-theme-balham" rowAnimation pagination [rowData]="rowData"
+            [columnDefs]="columnDefs" [frameworkComponents]="frameworkComponents" paginationAutoPageSize>
+        </ag-grid-angular>
+
+    </ion-card>
+
+</ion-grid>

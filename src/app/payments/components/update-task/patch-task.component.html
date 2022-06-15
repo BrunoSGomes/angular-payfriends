@@ -1,0 +1,85 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title class="task-title">Alterar pagamento</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="patchTaskForm">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label for="name" position="floating">Nome<ion-text color="danger">*</ion-text>
+                        </ion-label>
+                        <ion-input formControlName="name" placeholder="Bruno Gomes"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col>
+                    <ion-item>
+                        <ion-label for="username" position="floating">Usuário<ion-text color="danger">*</ion-text>
+                        </ion-label>
+                        <ion-input formControlName="username" placeholder="bgomes232"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label for="title" position="floating">Título<ion-text color="danger">*</ion-text>
+                        </ion-label>
+                        <ion-input formControlName="title" placeholder="Desenvolvedor Jr."></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col>
+                    <ion-item>
+                        <ion-label for="value" position="floating">Valor<ion-text color="danger">*</ion-text>
+                        </ion-label>
+                        <ion-input type="number" formControlName="value" placeholder="500">
+                            <span>R$&nbsp;</span>
+                        </ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label position="stacked" for="date">Data do Pagamento<ion-text color="danger">*</ion-text>
+                        </ion-label>
+                        <input type="datetime-local" formControlName="date">
+                    </ion-item>
+                </ion-col>
+                <ion-col>
+                    <ion-item>
+                        <ion-label position="stacked" for="isPayed">Pago<ion-text color="danger">*</ion-text>
+                        </ion-label>
+                        <ion-select formControlName="isPayed">
+                            <ion-select-option value="true">Sim</ion-select-option>
+                            <ion-select-option value="false">Não</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons class="ion-justify-content-center">
+            <button (click)="closePatchTask('cancel')" class="cancelButton" size="small" shape="round"
+                fill="outline">Cancelar</button>
+            <button (click)="patchTask()" class="createButton" size="small" shape="round"
+                fill="outline">Alterar</button>
+        </ion-buttons>
+        <ion-row class="alertAdjust">
+            <ion-col class="ion-text-center">
+                <ion-label class="alertTaskForm" *ngIf="!patchTaskForm.valid">
+                    Por favor preencher campos obrigatórios.
+                </ion-label>
+            </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</ion-footer>

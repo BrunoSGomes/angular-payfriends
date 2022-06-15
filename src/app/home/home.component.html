@@ -1,0 +1,28 @@
+<body class="main-class">
+
+    <ion-card class="card-frame">
+
+        <ion-card-header color="primary">
+            <ion-title class="header-title"><b>Pay</b>Friends</ion-title>
+        </ion-card-header>
+
+        <div class="div-class">
+            <ion-list class="form-class">
+                <ion-item>
+                    <ion-label position="fixed">E-mail</ion-label>
+                    <ion-input (keyup.enter)="login()" [(ngModel)]="email"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label position="fixed">Senha</ion-label>
+                    <ion-input (keyup.enter)="login()" type="password" [(ngModel)]="password"></ion-input>
+                </ion-item>
+            </ion-list>
+
+            <ion-button class="button-class" [disabled]="!email || !password" shape="round" (click)="login()">Login
+            </ion-button>
+        </div>
+
+    </ion-card>
+
+</body>

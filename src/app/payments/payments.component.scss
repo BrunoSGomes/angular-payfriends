@@ -1,0 +1,50 @@
+.header-title {
+    left: 30px;
+    top: 10px;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 29px;
+    color: #F8F8F8;
+}
+
+.avatar-class {
+    height: 40px !important;
+    width: 40px !important;
+    margin-right: 30px;
+}
+
+.cursor-pointer:hover {
+    cursor: pointer;
+}
+
+.grid-class {
+    overflow-x: scroll;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    padding: 50px;
+
+    .payments-title-class {
+        .payments-title {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 44px;
+            color: #333333;
+        }
+    }
+
+    .payment-button {
+        justify-content: right;
+        margin-right: 5px;
+    }
+
+    .card-class {
+        .ag-grid-class {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+        }   
+    }
+
+}
